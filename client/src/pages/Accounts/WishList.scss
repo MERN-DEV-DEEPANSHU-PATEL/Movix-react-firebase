@@ -1,0 +1,13 @@
+.wishlist {
+  margin: 10vh auto;
+  display: flex;
+  flex-wrap: wrap;
+  .movieCard {
+    margin: auto;
+  }
+}
+
+.empty-wl {
+  margin: 20vh 10vw;
+  color: #fff;
+}

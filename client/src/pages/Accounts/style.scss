@@ -1,0 +1,155 @@
+@import "../../mixins.scss";
+.login-box {
+  margin-top: 60vh;
+  margin-left: 50vw;
+  width: 250px;
+  padding: 18px;
+  transform: translate(-50%, -50%);
+  background: rgba(95, 80, 80, 0.226);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(19, 104, 110, 0.6);
+  border-radius: 10px;
+  @include sm {
+    margin-top: 56vh;
+    margin-left: 50vw;
+    width: 300px;
+    padding: 25px;
+  }
+
+  h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+
+  .user-box {
+    position: relative;
+
+    input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      background: transparent;
+    }
+
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      pointer-events: none;
+      transition: 0.5s;
+    }
+
+    input:focus ~ label,
+    input:valid ~ label {
+      top: -20px;
+      left: 0;
+      color: rgb(0, 255, 221);
+      font-size: 12px;
+    }
+  }
+
+  .login-container {
+    button {
+      cursor: pointer;
+      position: relative;
+      background-color: transparent;
+      border: none;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #03e9f4;
+      font-size: 16px;
+      text-decoration: none;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: 0.5s;
+      letter-spacing: 4px;
+      @include sm {
+        margin-top: 10px;
+        padding: 0;
+      }
+      &:hover {
+        background: #03e9f4;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+          0 0 100px #03e9f4;
+      }
+    }
+    .toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: rgb(255, 255, 255);
+      @include sm {
+        margin: 5px;
+        font-size: 1rem;
+      }
+      a {
+        position: relative;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        margin: 0.2rem;
+        display: inline-block;
+        color: #03e9f4;
+        font-size: 0.95rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: 0.5s;
+        letter-spacing: 1.5px;
+        @include sm {
+          letter-spacing: 3px;
+        }
+      }
+    }
+  }
+}
+
+.alert-profile {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8em;
+  display: none;
+}
+
+.alert-danger {
+  display: inline-block;
+  border: 1px solid red;
+  background-color: #6e2e02;
+  color: rgb(231 134 134);
+}
+.alert-success {
+  display: inline-block;
+  border: 1px solid rgb(72, 255, 0);
+  background-color: #307e03;
+  color: rgb(189, 231, 134);
+}
+
+.login-success {
+  margin: 20vh auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .user-name {
+    text-transform: capitalize;
+    color: #fff;
+  }
+  .info-text {
+    color: #fff;
+  }
+}

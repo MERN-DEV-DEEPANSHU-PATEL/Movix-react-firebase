@@ -1,0 +1,162 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --black: #04152d;
+  --black2: #041226;
+  --black3: #020c1b;
+  --black-lighter: #1c4b91;
+  --black-light: #173d77;
+  --pink: #da2f68;
+  --orange: #f89e00;
+  --gradient: linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: #0a2955;
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+      90deg,
+      rgba(#193763, 0) 0,
+      rgba(#193763, 0.2) 20%,
+      rgba(#193763, 0.5) 60%,
+      rgba(#193763, 0)
+    );
+    animation: shimmer 2s infinite;
+    content: "";
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+
+.alert-sec {
+  position: fixed;
+  top: 10vh;
+  right: 43vw;
+  z-index: 10;
+  width: 100%;
+}
+
+.btn {
+  display: flex;
+  flex-wrap: wrap;
+  &-nav {
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 30px;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    font-size: 20px;
+    background-image: linear-gradient(
+      to right bottom,
+      rgb(249, 116, 15),
+      rgb(165, 72, 0)
+    );
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    /* Button hover effect */
+    &:hover {
+      background-color: orangered;
+      transform: scale(1.05);
+    }
+    /* Button click effect */
+    &:active {
+      transform: scale(0.95);
+    }
+    /* Animation effect on click */
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+@keyframes slideUp {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  100% {
+    top: 12%;
+    opacity: 1;
+    transform: translate(0, 0); /* Corrected property name and syntax */
+  }
+}
+
+.movieAddedMessage {
+  position: absolute;
+  transform: translate(0, -100%);
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  animation: slideUp 0.7s cubic-bezier(0.21, 1.28, 0.82, 0.97) forwards; /* Use the animation here with forwards fill mode */
+}
+
+.alert- {
+  &green {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(2, 230, 2);
+  }
+  &red {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: darkred;
+  }
+  &yellow {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: yellow;
+  }
+}
