@@ -87,7 +87,7 @@ const MovieCard = ({ profile = false, data, mediaType }) => {
       <div
         className="movieCard"
         onClick={() =>
-          navigate(`/${data.media_Type ? data.media_Type : "movie"}/${data.id}`)
+          navigate(`/${data.media_type ? data.media_type : mediaType ? mediaType : "movie"}/${data.id}`)
         }
       >
         {showAddedMessage.show && (
