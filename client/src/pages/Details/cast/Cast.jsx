@@ -4,7 +4,6 @@ import "./style.scss";
 
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 import Img from "../../../components/lazyLoadImage/Img";
-import avatar from "../../../assets/avatar.png";
 import { Context } from "../../../store/Context";
 
 const Cast = ({ data, loading }) => {
@@ -28,7 +27,7 @@ const Cast = ({ data, loading }) => {
             {data?.map((item) => {
               let imgUrl = item.profile_path
                 ? url.profile + item.profile_path
-                : avatar;
+                : "https://iili.io/JX5okba.png";
               return (
                 <div key={item.id} className="listItem">
                   <div className="profileImg">

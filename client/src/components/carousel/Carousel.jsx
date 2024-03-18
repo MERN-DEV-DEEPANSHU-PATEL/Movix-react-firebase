@@ -4,7 +4,6 @@ import {
   BsFillArrowRightCircleFill,
 } from "react-icons/bs";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-import PosterFallback from "../../assets/no-poster.png";
 import "./style.scss";
 
 import SkeletonCard from "../skeletonCard/SkeletonCard";
@@ -43,7 +42,7 @@ const Carousel = ({ profile = false, data, loading, mediaType, title }) => {
             {data?.map((item, index) => {
               const posterUrl = item.poster_path
                 ? url.poster + item.poster_path
-                : PosterFallback;
+                : "https://iili.io/JX5xJd7.png";
               return (
                 <MovieCard
                   profile={profile}

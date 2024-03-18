@@ -8,7 +8,6 @@ import { fetchDataFromApi } from "../../utils/api";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
-import noResults from "../../assets/no-results.png";
 import Img from "../../components/lazyLoadImage/Img";
 
 const SearchResult = () => {
@@ -84,7 +83,10 @@ const SearchResult = () => {
             </>
           ) : (
             <span className="resultNotFound">
-              <Img src={noResults} alt={"No results Image"} />
+              <Img
+                src={"https://iili.io/JX5x5hJ.png"}
+                alt={"No results Image"}
+              />
               Sorry, Results not found!
             </span>
           )}

@@ -9,7 +9,6 @@ import useFetch from "../../../hooks/useFetch";
 import Genres from "../../../components/genres/Genres";
 import CircleRating from "../../../components/circleRating/CircleRating";
 import Img from "../../../components/lazyLoadImage/Img.jsx";
-import PosterFallback from "../../../assets/no-poster.png";
 import { PlayIcon } from "../Playbtn";
 import VideoPopup from "../../../components/videoPopup/VideoPopup";
 import { Context } from "../../../store/Context";
@@ -55,7 +54,10 @@ const DetailsBanner = ({ video, crew }) => {
                         src={url.backdrop + data.poster_path}
                       />
                     ) : (
-                      <Img className="posterImg" src={PosterFallback} />
+                      <Img
+                        className="posterImg"
+                        src={"https://iili.io/JX5xJd7.png"}
+                      />
                     )}
                   </div>
                   <div className="right">

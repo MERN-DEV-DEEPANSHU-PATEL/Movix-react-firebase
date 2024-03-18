@@ -8,8 +8,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./style.scss";
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-import logo from "../../assets/movix-logo.svg";
 import { Context } from "../../store/Context";
+import Img from "../lazyLoadImage/Img";
 
 const Header = () => {
   const [show, setShow] = useState("top");
@@ -80,7 +80,7 @@ const Header = () => {
     <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
       <ContentWrapper>
         <div className="logo" onClick={() => navigate("/")}>
-          <img src={logo} alt="" />
+          <Img src="https://iili.io/JX5zzG4.png" alt="movix logo" border="0" />
         </div>
         <ul className="menuItems">
           <li className="menuItem" onClick={() => navigationHandler("movie")}>

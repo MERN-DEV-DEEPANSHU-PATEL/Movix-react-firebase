@@ -1,12 +1,10 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import dayjs from "dayjs";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import "./style.scss";
 import Img from "../lazyLoadImage/Img";
 import CircleRating from "../circleRating/CircleRating";
 import Genres from "../genres/Genres";
-import PosterFallback from "../../assets/no-poster.png";
 import { MdAdd, MdDeleteForever } from "react-icons/md";
 import { Context } from "../../store/Context";
 import {
@@ -25,7 +23,7 @@ const MovieCard = ({ profile = false, data, mediaType }) => {
   const navigate = useNavigate();
   const posterUrl = data?.poster_path
     ? url.poster + data?.poster_path
-    : PosterFallback;
+    : "https://iili.io/JX5xJd7.png";
 
   const addToList = useCallback(
     async (movie, event) => {
@@ -87,7 +85,15 @@ const MovieCard = ({ profile = false, data, mediaType }) => {
       <div
         className="movieCard"
         onClick={() =>
-          navigate(`/${data.media_type ? data.media_type : mediaType ? mediaType : "movie"}/${data.id}`)
+          navigate(
+            `/${
+              data.media_type
+                ? data.media_type
+                : mediaType
+                ? mediaType
+                : "movie"
+            }/${data.id}`
+          )
         }
       >
         {showAddedMessage.show && (
