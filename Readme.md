@@ -1,5 +1,7 @@
 # Movie and TV Series Information Portal
 
+[Live Project Link here ](https://movix-react-firebase-app-by-deepanshu.netlify.app)
+
 This project is a comprehensive platform for accessing detailed information about movies and TV series. It serves as a one-stop solution for users looking to explore everything related to their favorite films and TV shows, just like IMDb.
 
 ## Features
